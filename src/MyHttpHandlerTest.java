@@ -66,14 +66,14 @@ class MyHttpExchange extends HttpExchange {
 public class MyHttpHandlerTest {
     @Test(expected = AssertionError.class)
     public void testNullDirectory() {
-        Arguments arguments = new Arguments(8080, null, 1);
+        Arguments arguments = new Arguments(8080, null, 1, 10);
         new MyHttpHandler(arguments);
     }
 
     @Test
     public void testURI() throws IOException {
         MyHttpExchange myHttpExchange = new MyHttpExchange();
-        Arguments arguments = new Arguments(8080, "/tmp", 2);
+        Arguments arguments = new Arguments(8080, "/tmp", 2, 10);
         MyHttpHandler myHttpHandler = new MyHttpHandler(arguments);
         myHttpHandler.handle(myHttpExchange);
         assertEquals(myHttpExchange.getrCode(), 404);
