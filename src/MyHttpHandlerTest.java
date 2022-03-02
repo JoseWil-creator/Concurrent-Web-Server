@@ -18,7 +18,7 @@ class MyHttpExchange extends HttpExchange {
     private final ByteArrayOutputStream baos = new ByteArrayOutputStream();
     ByteArrayOutputStream getBaos() { return baos; }
     private int rCode;
-    int getrCode() { return rCode; }
+    int getCode() { return rCode; }
     private long responseLength;
     long getResponseLength() { return responseLength; }
     Headers headers = new Headers();
@@ -76,7 +76,7 @@ public class MyHttpHandlerTest {
         Arguments arguments = new Arguments(8080, "/tmp", 2, 10);
         MyHttpHandler myHttpHandler = new MyHttpHandler(arguments);
         myHttpHandler.handle(myHttpExchange);
-        assertEquals(myHttpExchange.getrCode(), 404);
+        assertEquals(myHttpExchange.getCode(), 404);
         myHttpHandler.handle(myHttpExchange);
     }
 }

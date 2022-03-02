@@ -18,9 +18,15 @@ public class ArgumentsTest {
         new Arguments(8080, null, 1, 10);
     }
 
+
+
     @Test(expected = AssertionError.class)
-    public void testZeroLengthDirectory() {
-        new Arguments(8080, "", 1, 10);
+    public void testZeroThreads() {
+        new Arguments(8080, "/tmp", 1, 0);
+    }
+    @Test(expected = AssertionError.class)
+    public void testNegativeThreads(){
+        new Arguments(8080, "/tmp", 1, -1);
     }
 
     @Test

@@ -45,6 +45,12 @@ class Arguments {
         else if(directory.equals("")){
             throw new AssertionError("Directory is 0");
         }
+        else if(threads < 0){
+            throw new AssertionError("Threads can't be negative");
+        }
+        else if(threads == 0){
+            throw new AssertionError("Threads can't be zero :(");
+        }
     }
 
     int getPort() { return port; }
@@ -85,14 +91,13 @@ class MyHttpHandler implements HttpHandler {
         try {
             fis = new FileInputStream(f);
         }catch (FileNotFoundException FNFE){
-            System.out.println(f.getCanonicalPath()); // Used to debug to see where it was looking for the file.
+         //   System.out.println(f.getCanonicalPath()); // Used to debug to see where it was looking for the file.
             fileNotFound(httpExchange);
             Destroy();
             return;
 
         }
         fileFound(httpExchange, f.length(), fis);
-
 
         System.out.println(countResp + "\n" + arguments.getResponses() );
         Destroy();
@@ -123,7 +128,7 @@ class MyHttpHandler implements HttpHandler {
 }
 
 public class Main {
-    private static final int NTHREADS = 2;
+    private static final int NTHREADS = 2; //HardCoded Threads not used
    // private static final Executor exec = Executor.newFixedThreadPool(NTHREADS);
     /** Method parseArgs parses strings that are passed into through
      * @param args it's a command line argument stored as collection of Strings, separated by a space, which can be
@@ -153,7 +158,7 @@ public class Main {
             else{
                 throw new IllegalArgumentException(info[i]);
             }
-        }r
+        }
         if(dir == null)
             throw new AssertionError();
 
