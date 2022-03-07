@@ -81,7 +81,7 @@ class MyHttpHandler implements HttpHandler {
     //Method locked
     public synchronized void handle(HttpExchange httpExchange) throws IOException {
         countResp.incrementAndGet(); //countResp++;
-        System.out.println(httpExchange.getRequestURI()); // Browser request for icon in page so that counts as one response
+        //System.out.println(httpExchange.getRequestURI()); // Browser request for icon in page so that counts as one response
         // Because I have my project in a long path folder I had to hard code the path until I reached Assignment_01
         //String pathName = "C:/Users/willi/OneDrive/Desktop/SPRING_2022/CS39AC_Concurrent_programming/Assignment_01" + arguments.getDirectory() + httpExchange.getRequestURI();
         String pathName = arguments.getDirectory() + httpExchange.getRequestURI();
@@ -91,7 +91,7 @@ class MyHttpHandler implements HttpHandler {
         try {
             fis = new FileInputStream(f);
         }catch (FileNotFoundException FNFE){
-         //   System.out.println(f.getCanonicalPath()); // Used to debug to see where it was looking for the file.
+           // System.out.println(f.getCanonicalPath()); // Used to debug to see where it was looking for the file.
             fileNotFound(httpExchange);
             Destroy();
             return;
@@ -99,7 +99,7 @@ class MyHttpHandler implements HttpHandler {
         }
         fileFound(httpExchange, f.length(), fis);
 
-        System.out.println(countResp + "\n" + arguments.getResponses() );
+        System.out.println(countResp + " Responses --> out of " + arguments.getResponses() );
         Destroy();
 
     }
