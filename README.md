@@ -8,6 +8,8 @@ when the server ran with 5 threads with a high transfer of 783.18 [Kbytes/sec] t
 Overall, the Web Server ran best with 5 threads improving request per second, time per request, and transfer rate with
 safe concurrency in each thread.`
 
+### Each run has a warm performance overall because cold start showed performance all over the place when there was one thread or two. However, five threads always showed better performance. 
+
 ##Thread Number: 1
 
 Requests per second:    803.21 [#/sec] (mean)
