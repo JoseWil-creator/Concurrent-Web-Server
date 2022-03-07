@@ -7,6 +7,7 @@ when the server ran with 5 threads with a high transfer of 783.18 [Kbytes/sec] t
 7 threads each reporting almost the same amount of data received: one thread = 207.86 and seven threads = 224.82.
 Overall, the Web Server ran best with 5 threads improving request per second, time per request, and transfer rate with
 safe concurrency in each thread.`
+
 ##Thread Number: 1
 
 Requests per second:    803.21 [#/sec] (mean)
@@ -68,7 +69,6 @@ Time per request:       0.865 [ms] (mean, across all concurrent requests)
 Transfer rate:          299.25 [Kbytes/sec] received
 
 ##Thread Number: 7
-
 Requests per second:    868.74 [#/sec] (mean)
 
 Time per request:       11.511 [ms] (mean)
