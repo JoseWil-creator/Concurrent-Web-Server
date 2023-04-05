@@ -77,6 +77,7 @@ class MyHttpHandler implements HttpHandler {
      * {@linkhttps://docs.oracle.com/javase/8/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpExchange.html}
      * {@linkhttps://docs.oracle.com/javase/7/docs/api/java/io/FileInputStream.html
      * **/
+
     @Override
     //Method locked
     public synchronized void handle(HttpExchange httpExchange) throws IOException {
@@ -176,6 +177,7 @@ public class Main {
 /**
  * {@link <a href="https://docs.oracle.com/javase/8/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/package-summary.html">...</a>}
  * */
+
     public static void main(String[] args) throws IOException {
 
         // String[] stringArguments = {"--port","8080", "--directory", "/tmp", "--responses", "5"};
